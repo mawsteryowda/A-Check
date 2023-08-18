@@ -1,6 +1,10 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class SignUp extends StatelessWidget {
+  const SignUp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -153,6 +157,9 @@ class SignUp extends StatelessWidget {
                     side: BorderSide(color: Color(0xff808080), width: 1),
                   ),
                   padding: EdgeInsets.all(16),
+                  textColor: Color(0xffffffff),
+                  height: 40,
+                  minWidth: 140,
                   child: Text(
                     "Confirm",
                     style: TextStyle(
@@ -161,9 +168,6 @@ class SignUp extends StatelessWidget {
                       fontStyle: FontStyle.normal,
                     ),
                   ),
-                  textColor: Color(0xffffffff),
-                  height: 40,
-                  minWidth: 140,
                 ),
               ),
             ),
