@@ -1,6 +1,11 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:a_check/dashboard.dart';
 import 'package:flutter/material.dart';
 
 class LogIn extends StatelessWidget {
+  const LogIn({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -145,7 +150,12 @@ class LogIn extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerRight,
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Dashboard()),
+                    );
+                  },
                   color: Color(0xff000000),
                   elevation: 0,
                   shape: RoundedRectangleBorder(
@@ -153,6 +163,9 @@ class LogIn extends StatelessWidget {
                     side: BorderSide(color: Color(0xff808080), width: 1),
                   ),
                   padding: EdgeInsets.all(16),
+                  textColor: Color(0xffffffff),
+                  height: 40,
+                  minWidth: 140,
                   child: Text(
                     "Confirm",
                     style: TextStyle(
@@ -161,9 +174,6 @@ class LogIn extends StatelessWidget {
                       fontStyle: FontStyle.normal,
                     ),
                   ),
-                  textColor: Color(0xffffffff),
-                  height: 40,
-                  minWidth: 140,
                 ),
               ),
             ),
