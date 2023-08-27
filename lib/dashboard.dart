@@ -1,3 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:a_check/Create_Class.dart';
+import 'package:a_check/sidedrawer.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
@@ -9,18 +13,26 @@ class Dashboard extends StatelessWidget {
       backgroundColor: Color(0xffffffff),
       appBar: AppBar(
         elevation: 4,
+        title: const Text(
+          "Dashboard",
+          style: TextStyle(color: Colors.black),
+        ),
+        leading: Builder(builder: (context) {
+          return IconButton(
+            icon: Icon(
+              Icons.menu,
+              color: Colors.black,
+            ),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          );
+        }),
         centerTitle: false,
-        automaticallyImplyLeading: false,
         backgroundColor: Color(0xffffffff),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.zero,
         ),
-        leading: Icon(
-          Icons.menu,
-          color: Color(0xff212435),
-          size: 24,
-        ),
       ),
+      drawer: const SideDrawer(),
       body: Padding(
         padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
         child: SingleChildScrollView(
@@ -85,7 +97,12 @@ class Dashboard extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CreateClass()),
+          );
+        },
         child: const Icon(Icons.add),
       ),
     );
