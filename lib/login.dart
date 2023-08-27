@@ -111,7 +111,7 @@ class LogIn extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: TextField(
                   controller: TextEditingController(),
-                  obscureText: false,
+                  obscureText: true,
                   textAlign: TextAlign.start,
                   maxLines: 1,
                   style: TextStyle(
