@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:a_check/dashboard.dart';
 import 'package:a_check/sidedrawer.dart';
 import 'package:flutter/material.dart';
 
@@ -244,7 +245,7 @@ class CreateClass extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SideDrawer()),
+                  MaterialPageRoute(builder: (context) => Dashboard()),
                 );
               },
               color: Color(0xff000000),

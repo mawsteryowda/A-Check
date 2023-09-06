@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:a_check/Create_Class.dart';
+import 'package:a_check/classdashboard.dart';
 import 'package:a_check/sidedrawer.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,8 @@ class Dashboard extends StatelessWidget {
         ),
       ),
       drawer: const SideDrawer(),
-      body: Padding(
+      //changed these to listview
+      /*body: Padding(
         padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
         child: SingleChildScrollView(
           child: Column(
@@ -41,29 +43,37 @@ class Dashboard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                width: MediaQuery.of(context).size.width,
-                height: 100,
-                decoration: BoxDecoration(
-                  color: Color(0x1fffffff),
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(5.0),
-                  border: Border.all(color: Color(0x4d9e9e9e), width: 1),
-                ),
-                child: Text(
-                  "Subject 1",
-                  textAlign: TextAlign.start,
-                  overflow: TextOverflow.clip,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 14,
-                    color: Color(0xff000000),
+              InkWell(
+                child: Container(
+                  alignment: Alignment.topLeft,
+                  margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                  padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                  width: MediaQuery.of(context).size.width,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Color(0x1fffffff),
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(5.0),
+                    border: Border.all(color: Color(0x4d9e9e9e), width: 1),
+                  ),
+                  child: Text(
+                    "Subject 1",
+                    textAlign: TextAlign.start,
+                    overflow: TextOverflow.clip,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal,
+                      fontSize: 14,
+                      color: Color(0xff000000),
+                    ),
                   ),
                 ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ClassDashboard()));
+                },
               ),
               Container(
                 alignment: Alignment.topLeft,
@@ -95,8 +105,25 @@ class Dashboard extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      ),*/
+      body: ListView(children: <Widget>[
+        Card(
+          child: ListTile(
+            title: Text('Introduction to Computing'),
+            subtitle: Text("ITMC101\n" "Room P17"),
+            isThreeLine: true,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ClassDashboard()),
+              );
+            },
+          ),
+        ),
+      ]),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
         onPressed: () {
           Navigator.push(
             context,
