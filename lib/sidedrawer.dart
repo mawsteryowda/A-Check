@@ -2,7 +2,8 @@
 
 import 'package:a_check/dashboard.dart';
 import 'package:flutter/material.dart';
-import 'package:a_check/classes.dart';
+import 'package:a_check/main.dart';
+import 'package:a_check/classdashboard.dart';
 
 class SideDrawer extends StatelessWidget {
   const SideDrawer({super.key});
@@ -60,13 +61,14 @@ class SideDrawer extends StatelessWidget {
             );
           },
         ),
+        const Divider(color: Colors.black),
         ListTile(
-          leading: Icon(Icons.class_outlined),
-          title: Text('Classes'),
+          leading: Icon(Icons.logout),
+          title: Text('Log Out'),
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Classes()),
+              MaterialPageRoute(builder: (context) => MainApp()),
             );
           },
         ),
