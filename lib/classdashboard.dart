@@ -35,31 +35,51 @@ class ClassDashboard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: [
-          Container(
-            margin: EdgeInsets.all(0),
-            padding: EdgeInsets.all(0),
-            width: MediaQuery.of(context).size.width,
-            height: 150,
-            decoration: BoxDecoration(
-              color: Color.fromARGB(31, 128, 128, 128),
+          Card(
+            margin: EdgeInsets.all(4.0),
+            color: Color(0xffe0e0e0),
+            shadowColor: Color(0xff000000),
+            elevation: 1,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4.0),
+              side: BorderSide(color: Color(0x4d9e9e9e), width: 1),
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Text(
-                  "bababoey",
-                  textAlign: TextAlign.start,
-                  overflow: TextOverflow.clip,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 14,
-                    color: Color(0xff000000),
-                  ),
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const ListTile(
+                  title: Text('Introduction to Computing'),
+                  subtitle: Text('ITMC101'),
                 ),
-                Text("mhmm"),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    MaterialButton(
+                      child: Text(
+                        "Generate Code",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                        ),
+                      ),
+                      onPressed: () {},
+                    ),
+                    //const SizedBox(width: 8),
+                    MaterialButton(
+                      child: Text(
+                        "Assign Beadle",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                        ),
+                      ),
+                      onPressed: () {},
+                    ),
+                    //const SizedBox(width: 8),
+                  ],
+                ),
               ],
             ),
           ),
